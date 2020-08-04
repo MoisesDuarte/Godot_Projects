@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Textures/BrickWall.png" type="Texture" id=1]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.415686, 0.443137, 0.537255, 1 )
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 3, 2, 1 )
 
 [sub_resource type="CubeMesh" id=2]
 material = SubResource( 1 )
