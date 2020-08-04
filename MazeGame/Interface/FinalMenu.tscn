@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Interface/Fonts/OpenSans-ExtraBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Interface/Fonts/opensans_extrabold.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Interface/FinalMenu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 1 )
+
+[node name="FinalMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Column" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 461.0
+margin_top = 274.0
+margin_right = 818.0
+margin_bottom = 445.0
+
+[node name="Title" type="Label" parent="CenterContainer/Column"]
+margin_right = 357.0
+margin_bottom = 67.0
+custom_fonts/font = SubResource( 1 )
+text = "Sucesso!"
+align = 1
+
+[node name="Time" type="Label" parent="CenterContainer/Column"]
+margin_top = 71.0
+margin_right = 357.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 2 )
+text = "Seu tempo foi: 1m 25s"
+
+[node name="Row" type="HBoxContainer" parent="CenterContainer/Column"]
+margin_top = 120.0
+margin_right = 357.0
+margin_bottom = 171.0
+
+[node name="TryAgain" type="Button" parent="CenterContainer/Column/Row"]
+margin_right = 195.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Recomeçar"
+
+[node name="Exit" type="Button" parent="CenterContainer/Column/Row"]
+margin_left = 199.0
+margin_right = 357.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Sair"
+[connection signal="pressed" from="CenterContainer/Column/Row/TryAgain" to="." method="_on_TryAgain_pressed"]
+[connection signal="pressed" from="CenterContainer/Column/Row/Exit" to="." method="_on_Exit_pressed"]
